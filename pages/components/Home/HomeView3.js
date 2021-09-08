@@ -19,7 +19,7 @@ export default function HomeView3(props) {
 
 function truncatepara(line){
 
-    var length = 102;
+    var length = 92;
     var myString = line;
     var myTruncatedString = myString.substring(0,length);
 
