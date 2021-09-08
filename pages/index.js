@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {motion} from "framer-motion";
 import Body from './components/Body'
 import axios from 'axios'
 
@@ -12,6 +11,9 @@ import Rand5One from './components/Home/Rand5One'
 import Rand5Two from './components/Home/Rand5Two'
 
 import HomeBlogL1  from './components/Home/HomeBlogL1'
+
+import Truncate from 'react-truncate';
+
 
 
 export class index extends Component {
@@ -38,8 +40,16 @@ export class index extends Component {
     }
 
 
+//     componentDidMount(){
+//         var length = 20;
+// var myString = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere consequuntur tempora tempore minus, distinctio iure. Officia incidunt ab ipsam itaque. Ad debitis reiciendis id magni, beatae facilis dicta nihil doloremque!';
+// var myTruncatedString = myString.substring(0,length);
+
+// console.log(myTruncatedString)
+//     }
+
+
   render() {
-      console.log(this.props.datas.blogcategory5random4getblog)
     return (
       <Body>
   

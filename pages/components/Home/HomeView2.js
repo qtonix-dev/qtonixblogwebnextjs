@@ -6,6 +6,18 @@ import {motion} from "framer-motion";
 
 
 export default function HomeView2(props) {
+
+    function truncate(line){
+
+        var length =52;
+        var myString = line;
+        var myTruncatedString = myString.substring(0,length);
+
+        console.log(myTruncatedString)
+        return myTruncatedString;
+
+}
+
     var data = props.data;
     return (
         <div className="jl_m_right">
@@ -15,14 +27,22 @@ export default function HomeView2(props) {
             <div className="jl_m_right_content">
                 {/* <span className="jl_f_cat"><a className="post-category-color-text" style={{background: '#91bd3a'}} >Inspiration</a></span> */}
                 
-                <h3 className="entry-title"><Truncate lines={2} ellipsis={<span> ...</span>}>
+                <h3 className="entry-title">
+                    {/* <Truncate lines={2} ellipsis={<span> ...</span>}>
                             {data.title}
-                        </Truncate></h3>
+                        </Truncate></h3> */}
+                        {truncate(data.title)} ...
+                </h3>
                 
                 <span className="jl_post_meta"> <span className="post-date"><i className="jli-pen" /><Moment format="MMMM M, YYYY">{data.createdAt}</Moment></span></span>
-                <p className="mt-2"><Truncate lines={2} ellipsis={<span>... Read more</span>}>
+                <p className="mt-2">
+                {truncate(data.description)} ...
+                    {/* <Truncate lines={2} ellipsis={<span>... Read more</span>}>
                             {data.description}
-                        </Truncate></p>
+
+                        </Truncate> */}
+                        
+                        </p>
 
             
             </div>
