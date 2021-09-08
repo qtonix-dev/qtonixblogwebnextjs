@@ -4,6 +4,7 @@ import Moment from 'react-moment';
 import Link from 'next/link'
 import {motion} from "framer-motion";
 
+
 export default function HomeView2(props) {
     var data = props.data;
     return (
