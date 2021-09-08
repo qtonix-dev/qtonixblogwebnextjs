@@ -8,7 +8,7 @@ export default function HomeView2(props) {
     var data = props.data;
     return (
         <div className="jl_m_right">
-            <Link exact href={data.totalurl} passHref={true}>
+            {/* <Link exact href={data.totalurl} passHref={true}> */}
             <div className="jl_m_right_w">
             <div className="jl_m_right_img jl_radus_e"><a ><motion.img width={120} height={120} src={process.env.backendURLMAIN+'/'+data.imagesmall} alt="b" loading="lazy" /></a></div>
             <div className="jl_m_right_content">
@@ -26,7 +26,7 @@ export default function HomeView2(props) {
             
             </div>
             </div>
-            </Link>
+            {/* </Link> */}
         </div>
     )
 }

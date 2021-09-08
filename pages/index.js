@@ -15,6 +15,29 @@ import HomeBlogL1  from './components/Home/HomeBlogL1'
 
 
 export class index extends Component {
+
+    // export async function getServerSideProps(context){
+//     const response = await axios.get(`${process.env.backendURL}/blog/homepage`);
+//     return {
+//       props: {
+//         datas:response.data,
+//       },
+//       revalidate: 5,
+//     }
+//   }
+
+    static async getInitialProps({query}) {
+        var data ={query};
+            const response = await axios.get(`${process.env.backendURL}/blog/homepage`);
+
+        
+        
+        return{
+            datas:response.data
+        }
+    }
+
+
   render() {
       console.log(this.props.datas.blogcategory5random4getblog)
     return (
@@ -135,12 +158,12 @@ const mapDispatchToProps = {
 export default connect(mapStateToProps, mapDispatchToProps)(index)
 
 
-export async function getStaticProps(){
-    const response = await axios.get(`${process.env.backendURL}/blog/homepage`);
-    return {
-      props: {
-        datas:response.data,
-      },
-      revalidate: 5,
-    }
-  }
+// export async function getServerSideProps(context){
+//     const response = await axios.get(`${process.env.backendURL}/blog/homepage`);
+//     return {
+//       props: {
+//         datas:response.data,
+//       },
+//       revalidate: 5,
+//     }
+//   }
