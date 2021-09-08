@@ -6,6 +6,27 @@ import {motion} from "framer-motion";
 
 
 export default function HomeView3(props) {
+    function truncatehead(line){
+
+        var length = 36;
+        var myString = line;
+        var myTruncatedString = myString.substring(0,length);
+
+        console.log(myTruncatedString)
+        return myTruncatedString;
+
+}
+
+function truncatepara(line){
+
+    var length = 142;
+    var myString = line;
+    var myTruncatedString = myString.substring(0,length);
+
+    console.log(myTruncatedString)
+    return myTruncatedString;
+
+}
     var data = props.data;
     return (
         <div className="jl-grid-cols">
@@ -21,13 +42,19 @@ export default function HomeView3(props) {
 
                     </a> <span className="jl_f_cat"><a className="post-category-color-text" style={{background: '#62ce5c'}} >{data.category}</a></span></div>
                 <div className="text-box">
-                    <h3><Truncate lines={2} ellipsis={<span> ...</span>}>
+                    <h3>
+                        {/* <Truncate lines={2} ellipsis={<span> ...</span>}>
                             {data.title}
-                        </Truncate></h3>
+                        </Truncate> */}
+                        {truncatehead(data.title)} ...
+                        </h3>
                     <span className="jl_post_meta"> <span className="post-date"><i className="jli-pen" /><Moment format="MMMM M, YYYY">{data.createdAt}</Moment></span></span>
-                    <p><Truncate lines={3} ellipsis={<span>... Read more</span>}>
+                    <p>
+                    {truncatepara(data.description)} ...
+                        {/* <Truncate lines={3} ellipsis={<span>... Read more</span>}>
                             {data.description}
-                        </Truncate></p>
+                        </Truncate> */}
+                        </p>
                 </div>
                 </div>
             </div>
