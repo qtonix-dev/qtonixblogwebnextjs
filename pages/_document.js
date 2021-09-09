@@ -20,7 +20,7 @@ class MyDocument extends Document {
 
         
 
-        <Script src="/js/jquery.js" />
+        {/* <Script src="/js/jquery.js" /> */}
         <body>
           <Main />
           <NextScript />
