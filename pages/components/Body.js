@@ -97,10 +97,11 @@ export class Body extends Component {
                         <div className="col-md-12">
                             <div className="menu-primary-container navigation_wrapper">
                             <ul id="jl_top_menu" className="jl_main_menu">
-                                <li className="menu-item current-menu-item current_page_item"> <a href="index-2.html">Home<span className="border-menu" /></a></li>
-                                <li className="menu-item menu-item-4278"> <a href="#">About Us<span className="border-menu" /></a></li>
-                                <li className="menu-item menu-item-4279"> <a href="#">special offer<span className="border-menu" /></a></li>
-                                <li className="menu-item menu-item-4275"> <a href="#">Info!!<span className="border-menu" /></a></li>
+                               
+                                <li className="menu-item menu-item-4275"> <a href="#">info@qtonix.com<span className="border-menu" /></a></li>
+
+                                {/* <li className="menu-item menu-item-4275"> <a href="#"><span className="border-menu" /></a></li> */}
+
                             </ul>
                             </div>
                             <div className="jl_top_cus_social">
@@ -316,10 +317,10 @@ export class Body extends Component {
                             <div className="jl_ft_w">
                             Copyright 2021 Qtonix. All rights reserved powered by Qtonix Software Pvt Ltd
                             <ul id="menu-footer-menu" className="menu-footer">
-                                <li className="menu-item menu-item-6"> <a title href="#">About Us</a></li>
-                                <li className="menu-item menu-item-7"> <a title href="#">Private policy</a></li>
-                                <li className="menu-item menu-item-8"> <a title href="#">Forums</a></li>
-                                <li className="menu-item menu-item-9"> <a title href="#">Community</a></li>
+                                <li className="menu-item menu-item-6"> <Link href='/about-us'>About Us</Link></li>
+                                <li className="menu-item menu-item-7"> <Link href='/privacy-policy'>Privacy Policy</Link></li>
+                                <li className="menu-item menu-item-8"> <Link href='/terms-and-conditions'>Terms and Conditions</Link></li>
+                                
                             </ul>
                             </div>
                         </div>

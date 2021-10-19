@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Body from './components/Body'
 import axios from 'axios'
-
+import Head from 'next/head'
 import HomeView1 from './components/Home/HomeView1'
 import HomeView2 from './components/Home/HomeView2'
 import HomeView3 from './components/Home/HomeView3'
@@ -18,15 +18,6 @@ import Truncate from 'react-truncate';
 
 export class index extends Component {
 
-    // export async function getServerSideProps(context){
-//     const response = await axios.get(`${process.env.backendURL}/blog/homepage`);
-//     return {
-//       props: {
-//         datas:response.data,
-//       },
-//       revalidate: 5,
-//     }
-//   }
 
     static async getInitialProps({query}) {
         var data ={query};
@@ -40,18 +31,14 @@ export class index extends Component {
     }
 
 
-//     componentDidMount(){
-//         var length = 20;
-// var myString = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere consequuntur tempora tempore minus, distinctio iure. Officia incidunt ab ipsam itaque. Ad debitis reiciendis id magni, beatae facilis dicta nihil doloremque!';
-// var myTruncatedString = myString.substring(0,length);
-
-// console.log(myTruncatedString)
-//     }
-
-
   render() {
+      console.log(this.props.datas.seohome)
     return (
       <Body>
+          <Head>
+                <title>{this.props.datas.seohome.metatitle}</title>
+                <meta name="description" content={`${this.props.datas.seohome.metadescription}`} />
+            </Head>
   
   <section className="home_section1">
                     <div className="container" style={{marginTop:'9rem'}}>

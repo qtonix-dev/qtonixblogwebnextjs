@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BlogListBlock from '../../components/BlogListBlock'
 import Body from '../../components/Body'
 import {motion} from "framer-motion";
-
+import Head from 'next/head'
 import axios from 'axios'
 
 
@@ -22,9 +22,14 @@ export default class index extends Component {
   }
 
     render() {
-      console.log(this.props.pageinfo)
+      console.log(this.props)
         return (
             <Body>
+              <Head>
+            <title>{this.props.pageinfo.metatitle}</title>
+            <meta name="description" content={`${this.props.pageinfo.metadesc}`} />
+          </Head>
+              
               <div className="jl_post_loop_wrapper" id="wrapper_masonry">
                 <div className="container">
                   <div className="row">

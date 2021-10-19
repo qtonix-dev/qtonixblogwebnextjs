@@ -3,14 +3,21 @@ import axios from 'axios'
 import {motion} from "framer-motion";
 import BlogListBlock from '../components/BlogListBlock'
 import Body from '../components/Body'
-
+import Head from 'next/head'
 
 export default class index extends Component {
 
 
     render() {
+
+      console.log(this.props.datas)
+
         return (
             <Body>
+              <Head>
+                <title>{this.props.datas.meta.metatitle}</title>
+                <meta name="description" content={`${this.props.datas.meta.metadescription}`} />
+              </Head>
             <div className="jl_post_loop_wrapper" id="wrapper_masonry">
               <div className="container">
                 <div className="row">
@@ -21,25 +28,12 @@ export default class index extends Component {
                     </div>
                     <div className="jl_wrapper_cat">
                       <div id="content_masonry" className="jl_cgrid pagination_infinite_style_cat load_more_main_wrapper">
-                        
-                        {this.props.blogs.map((data)=>{
+                        {this.props.datas.blogs.map((data)=>{
                           return(
                             <BlogListBlock data={data} key={data._id} />
                           )
                         })}
-                        
-                        
                       </div>
-                      {/* <nav className="jellywp_pagination">
-                        <ul className="page-numbers">
-                          <li><span aria-current="page" className="page-numbers current">1</span> </li>
-                          <li><a className="page-numbers" href="#">2</a> </li>
-                          <li><a className="page-numbers" href="#">3</a> </li>
-                          <li><span className="page-numbers dots">…</span> </li>
-                          <li><a className="page-numbers" href="#">7</a> </li>
-                          <li><a className="next page-numbers" href="#"><i className="jli-right-chevron" /></a> </li>
-                        </ul>
-                      </nav> */}
                     </div>
                   </div>
                   <div className="col-md-4" id="sidebar">
@@ -57,53 +51,6 @@ export default class index extends Component {
                       </div>
                       
                       
-                      {/* <div id="sprasa_recent_post_text_widget-9" className="widget post_list_widget">
-                        <div className="widget_jl_wrapper">
-                          <div className="ettitle">
-                            <div className="widget-title">
-                              <h2 className="jl_title_c">Art &amp; Fashion</h2>
-                            </div>
-                          </div>
-                          <div className="bt_post_widget">
-                            <div className="jl_m_right jl_sm_list jl_ml jl_clear_at">
-                              <div className="jl_m_right_w">
-                                <div className="jl_m_right_img jl_radus_e"> <a href="#"> <motion.img width={120} height={120} src="img/pexels-daria-shevtsova-1257105-120x120.jpg" className="attachment-sprasa_small_feature size-sprasa_small_feature wp-post-image" alt="" loading="lazy" /> </a> </div>
-                                <div className="jl_m_right_content">
-                                  <h2 className="entry-title"> <a href="#" tabIndex={-1}>This place really good place for reading</a></h2>
-                                  <span className="jl_post_meta"><span className="jl_author_img_w"><i className="jli-user" /><a href="#" title="Posts by Spraya" rel="author">Spraya</a></span><span className="post-date"><i className="jli-pen" />July 24, 2016</span></span>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="jl_m_right jl_sm_list jl_ml jl_clear_at">
-                              <div className="jl_m_right_w">
-                                <div className="jl_m_right_img jl_radus_e"> <a href="#"> <motion.img width={120} height={120} src="img/jo-jo-M46Z1FXmD-c-unsplash-120x120.jpg" className="attachment-sprasa_small_feature size-sprasa_small_feature wp-post-image" alt="" loading="lazy" /> </a> </div>
-                                <div className="jl_m_right_content">
-                                  <h2 className="entry-title"> <a href="#" tabIndex={-1}>Having fun with DJ and the best music drop</a></h2>
-                                  <span className="jl_post_meta"><span className="jl_author_img_w"><i className="jli-user" /><a href="#" title="Posts by Spraya" rel="author">Spraya</a></span><span className="post-date"><i className="jli-pen" />July 24, 2016</span></span>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="jl_m_right jl_sm_list jl_ml jl_clear_at">
-                              <div className="jl_m_right_w">
-                                <div className="jl_m_right_img jl_radus_e"> <a href="#"> <motion.img width={120} height={120} src="img/melanie-van-leeuwen-QA-qQfWJM0E-unsplash-120x120.jpg" className="attachment-sprasa_small_feature size-sprasa_small_feature wp-post-image" alt="" loading="lazy" /> </a> </div>
-                                <div className="jl_m_right_content">
-                                  <h2 className="entry-title"> <a href="#" tabIndex={-1}>This guitar sound is so good and i need it more</a></h2>
-                                  <span className="jl_post_meta"><span className="jl_author_img_w"><i className="jli-user" /><a href="#" title="Posts by Spraya" rel="author">Spraya</a></span><span className="post-date"><i className="jli-pen" />July 24, 2016</span></span>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="jl_m_right jl_sm_list jl_ml jl_clear_at">
-                              <div className="jl_m_right_w">
-                                <div className="jl_m_right_img jl_radus_e"> <a href="#"> <motion.img width={120} height={120} src="img/daniel-korpai-_RYbP9O-vTU-unsplash-120x120.jpg" className="attachment-sprasa_small_feature size-sprasa_small_feature wp-post-image" alt="" loading="lazy" /> </a> </div>
-                                <div className="jl_m_right_content">
-                                  <h2 className="entry-title"> <a href="#" tabIndex={-1}>Technology can make your live easy and fast</a></h2>
-                                  <span className="jl_post_meta"><span className="jl_author_img_w"><i className="jli-user" /><a href="#" title="Posts by Spraya" rel="author">Spraya</a></span><span className="post-date"><i className="jli-pen" />July 24, 2016</span></span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div> */}
                       <div id="sprasa_ads300x250_widget-2" className="widget jellywp_ads300x250_widget">
                         <div className="widget_jl_wrapper ads_widget_container">
                           <div className="widget-title">
@@ -128,7 +75,7 @@ export async function getStaticProps(){
   const response = await axios.get(`${process.env.backendURL}/blog`);
   return {
     props: {
-      blogs:response.data.response,
+      datas:response.data,
     },
     revalidate: 5,
   }
