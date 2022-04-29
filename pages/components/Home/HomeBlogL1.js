@@ -13,7 +13,7 @@ export default function HomeBlogL1({data}) {
                                     <div className="jl_grid_w">
                                         <div className="jl_img_box jl_radus_e"><a ><motion.img width={500} height={350} src={process.env.backendURLMAIN+'/'+data.imagethumb} alt="b" loading="lazy" /></a></div>
                                         <div className="text-box">
-                                        <h5><Truncate lines={2} ellipsis={<span> ...</span>}>
+                                        <h5 style={{cursor:'pointer'}}><Truncate lines={2} ellipsis={<span> ...</span>}>
                             {data.title}
                         </Truncate></h5>
                                         <span className="jl_post_meta" style={{marginTop:'-20px'}}> <span className="post-date"><i className="jli-pen" /><Moment format="MMMM M, YYYY">{data.createdAt}</Moment></span></span>

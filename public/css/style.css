@@ -18976,7 +18976,8 @@ h6 {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	max-height: 3.7em
+	max-height: 3.7em;
+	cursor: pointer
 }
 
 .jl_m_right .jl_m_right_content .jl_f_cat {
@@ -18990,7 +18991,8 @@ h6 {
 .jl_m_right .jl_m_right_content p {
 	float: left;
 	width: 100%;
-	margin-bottom: 0
+	margin-bottom: 0;
+	cursor: pointer;
 }
 
 .jl_radus_e {

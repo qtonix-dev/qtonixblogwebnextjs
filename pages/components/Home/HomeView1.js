@@ -27,7 +27,7 @@ export default function HomeView1(props) {
           
             <div className="text-box">
                 <span className="jl_f_cat"><a className="post-category-color-text" style={{background: '#eba845'}} >{data.category}</a></span>
-                <h3 className="text-white"> 
+                <h3 className="text-white" style={{cursor:'pointer'}}> 
                 {/* <Truncate lines={2} ellipsis={<span> ...</span>}>
                 {data.title}
                         </Truncate>   */}
